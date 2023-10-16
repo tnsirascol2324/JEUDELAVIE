@@ -1,4 +1,4 @@
-## V1.4 Ajout d'une grille de base et de la possibilié de mettre en parametre sa propore grille
+## V1.4 Ajout d'une grille de base et de la possibilie de mettre en parametre sa propore grille
 from time import sleep
 from copy import deepcopy
 import os
@@ -57,7 +57,7 @@ class Jeu_de_la_vie:
     
     def run(self, nb_tours, delai):
         """
-        Méthode principale du jeu.
+        Methode principale du jeu.
 
         Fait tourner le jeu de la vie pendant nb_tours.
         Elle rafraichit l’affichage à chaque tour
@@ -72,7 +72,7 @@ class Jeu_de_la_vie:
         
     def __tour(self):
         """
-        Met à jour toute les cellules du tableau en respectant les règles
+        Met a jour toute les cellules du tableau en respectant les regles
         du jeu de la vie.
         """
         nouveau_tableau = deepcopy(self.__tableau)
@@ -122,7 +122,7 @@ class Jeu_de_la_vie:
             
 
     def __afficher(self):
-        """Affiche l'état actuel du jeu de la vie."""
+        """Affiche l'etat actuel du jeu de la vie."""
         tableau_str = ""
         for ligne in self.__tableau:
             for cellule in ligne:
