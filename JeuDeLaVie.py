@@ -64,7 +64,7 @@ class Jeu_de_la_vie:
         et attend delai entre chaque tour.
         """
         for k in range(nb_tours):
-            if self.__running == True:
+            if self.__running :
                 self.__tour()
                 self.__afficher()
                 sleep(delai)
