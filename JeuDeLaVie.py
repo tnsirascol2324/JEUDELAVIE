@@ -55,7 +55,7 @@ class Jeu_de_la_vie:
         self.__tableau = paramtableau
         
     
-    def run(self, nb_tours, delai):
+    def run(self, nb_tours, delais):
         """
         Méthode principale du jeu.
 
@@ -67,7 +67,7 @@ class Jeu_de_la_vie:
             if self.__running :
                 self.__tour()
                 self.__afficher()
-                sleep(delai)
+                sleep(delais)
 
         
     def __tour(self):
