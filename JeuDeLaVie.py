@@ -1,4 +1,5 @@
-## V1.4 Ajout d'une grille de base et de la possibilié de mettre en parametre sa propore grille
+## V1.4 Ajout d'une grille de base et de la possibilité de mettre en parametre sa propore grille
+
 from time import sleep
 from copy import deepcopy
 import os
@@ -134,20 +135,20 @@ class Jeu_de_la_vie:
         os.system('cls')
         print(tableau_str)
 
-mon_jeu = Jeu_de_la_vie() # Rentrez un tableau sous forme de liste de liste brute
-mon_jeu.run(500, 0.033)
 
 '''
 GRILLES D'EXEMPLES
+'''
+exemples = []; # stockés sous forme de liste. On aurait pu faire mieux : un dictionnaire avec le nom en clé et le tableau en valeur... # A FAIRE DANS LA PROCHAINE VERSION !
 
-OSCILLATEUR
-[[0, 0, 0, 1, 0, 0],
+# OSCILLATEUR
+exemples.append([[0, 0, 0, 1, 0, 0],
  [0, 1, 0, 0, 1, 0],
  [0, 1, 0, 0, 1, 0],
- [0, 0, 1, 0, 0, 0]]
+ [0, 0, 1, 0, 0, 0]])
 
- PLANEUR
- [[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+ # PLANEUR
+ exemples.append([[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   [0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   [0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -165,10 +166,10 @@ OSCILLATEUR
   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]])
 
-  CANON
-  [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  # CANON
+  exemples.append([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
@@ -187,10 +188,15 @@ OSCILLATEUR
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
 
+
+=======
    NULACHIER
    [[0, 0, 0],
    [0, 1, 0],
    [0, 0, 0]]
 '''
+
+mon_jeu = Jeu_de_la_vie(exemples[2]) # Rentrez un tableau sous forme de liste de liste brute
+mon_jeu.run(500, 0.033)
