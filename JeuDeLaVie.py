@@ -56,7 +56,7 @@ class Jeu_de_la_vie:
         self.__tableau = paramtableau
         
     
-    def run(self, nb_tours, delai):
+    def run(self, nb_tours, delais):
         """
         Méthode principale du jeu.
 
@@ -65,10 +65,10 @@ class Jeu_de_la_vie:
         et attend delai entre chaque tour.
         """
         for k in range(nb_tours):
-            if self.__running == True:
+            if self.__running :
                 self.__tour()
                 self.__afficher()
-                sleep(delai)
+                sleep(delais)
 
         
     def __tour(self):
@@ -189,6 +189,14 @@ exemples.append([[0, 0, 0, 1, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
+
+
+=======
+   NULACHIER
+   [[0, 0, 0],
+   [0, 1, 0],
+   [0, 0, 0]]
+'''
 
 mon_jeu = Jeu_de_la_vie(exemples[2]) # Rentrez un tableau sous forme de liste de liste brute
 mon_jeu.run(500, 0.033)
